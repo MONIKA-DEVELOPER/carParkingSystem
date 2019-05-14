@@ -1,0 +1,20 @@
+body{
+  margin-top: 10px;
+}
+a{
+  text-decoration: none;
+  color: #0f1419;
+}
+.heading{
+  margin-top: 20%;
+  font-size: 100px;
+  color: #efb551;
+}
+.updateColor{
+  color: white;
+}
+.error{
+  margin-left: 5px;
+  color:red;
+  display: inline;
+}

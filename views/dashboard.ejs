@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-6">
+        <img src="/img/logo.jpg" alt="logo" height = "80px" width="200px"/>
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <div class="col-md-2 btn-group btn-group-lg">
+         <button type="button" class="btn btn-warning"><a href="/addRecord">Add</a></button>
+         <button type="button" class="btn btn-warning">logout</button>
+      </div>
+    </div>
+    <div class="container">
+      <table class="table">
+         <tr>
+           <th>
+             Sr. No.
+           </th>
+           <th>
+             Car Modal
+           </th>
+           <th>
+             Car Number
+           </th>
+           <th>
+             Owner
+           </th>
+           <th>
+             Email
+           </th>
+           <th>
+             Contact
+           </th>
+           <th>
+             Company
+           </th>
+           <th>
+             Floor Number
+           </th>
+           <th colspan="3" class="text-center">
+             Actions
+           </th>
+         </tr>
+         <% data.forEach(function(record,index){ %>
+           <tr>
+             <td>
+               <%= index+1 %>
+             </td>
+             <td>
+               <%= record.carName %>
+             </td>
+             <td>
+               <%= record.carNumber %>
+             </td>
+             <td>
+               <%= record.owner %>
+             </td>
+             <td>
+               <%= record.email %>
+             </td>
+             <td>
+               <%= record.contact %>
+             </td>
+             <td>
+               <%= record.company %>
+             </td>
+             <td>
+               <%= record.floorNumber %>
+             </td>
+             <td>
+               <button type="button" class="btn btn-warning"><a href="/view/<%= record.id %>">view</a></button>
+             </td>
+             <td>
+               <button type="button" class="btn btn-warning"><a href="/Update/<%= record.id %>">Edit</a></button>
+             </td>
+             <td>
+               <button type="button" class="btn btn-warning" onclick="return deleteRecord()"><a href="/deleteRecord/<%= record.id %>">Delete</a></button>
+             </td>
+           </tr>
+         <% }) %>
+      </table>
+    </div>
+    <form class="container" action="" method="post">
+        <div class="col-md-2">
+        <label for="">car Name :</label>
+        <label for="">Car Number :</label>
+        <label for="">Owner :</label>
+        <label for="">Email :</label>
+        <label for="">Contact :</label>
+        <label for="">Company :</label>
+        <label for="">Floor Number :</label>
+        </div>
+        <div class="col-md-4">
+          <img src="" alt="Profile photo" />
+        </div>
+    </form>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
